@@ -43,10 +43,14 @@ struct FoundFalconView: View {
     private var successView: some View {
         VStack {
             Text("Success! Congratulations on Finding Falcone. King Shan is mighty Pleased.")
-                .font(.headline)
+                .font(.title)
                 .multilineTextAlignment(.center)
-            Text("Time taken: \(dataStore.totalTimeTaken)")
-            Text("Planet found: \(dataStore.planetName ?? "")")
+            VStack {
+                Text("Time taken: \(dataStore.totalTimeTaken)")
+                    .font(.title2)
+                Text("Planet found: \(dataStore.planetName ?? "")")
+                    .font(.title2)
+            }
             startAgainButtonView
         }
     }
@@ -54,9 +58,11 @@ struct FoundFalconView: View {
     private var failedView: some View {
         VStack {
             Text("Failed! King Shan is very angry.")
-                .font(.headline)
+                .font(.title)
+                .multilineTextAlignment(.center)
             startAgainButtonView
         }
+        .padding(20)
     }
     
     private var startAgainButtonView: some View {
@@ -65,10 +71,10 @@ struct FoundFalconView: View {
             dismiss()
         } label: {
             Text("Start Again")
+                .multilineTextAlignment(.center)
+                .frame(width: 200.0, height: 60.0)
         }
         .buttonStyle(.bordered)
-        .padding()
-        .frame(height: 60)
     }
 }
 

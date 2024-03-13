@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension FindFalconView {
-    func configureView() -> some View {
+    @MainActor func configureView() -> some View {
         let presenter = FindFalconPresenter()
         let interactor = FindFalconInteractor()
 

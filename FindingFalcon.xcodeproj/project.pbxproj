@@ -14,6 +14,7 @@
 		ED5C88172B9D698700D97AE3 /* FoundFalconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88162B9D698700D97AE3 /* FoundFalconPresenter.swift */; };
 		ED5C88192B9D6D9500D97AE3 /* FoundFalconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88182B9D6D9500D97AE3 /* FoundFalconModel.swift */; };
 		ED5C881E2B9DBA0A00D97AE3 /* FoundFalconDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C881D2B9DBA0A00D97AE3 /* FoundFalconDataStore.swift */; };
+		ED5C88202BA1881800D97AE3 /* FindFalconDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C881F2BA1881800D97AE3 /* FindFalconDataModel.swift */; };
 		EDE92D832B95FEAC00C6A055 /* FindingFalconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92D822B95FEAC00C6A055 /* FindingFalconApp.swift */; };
 		EDE92D852B95FEAC00C6A055 /* FindFalconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92D842B95FEAC00C6A055 /* FindFalconView.swift */; };
 		EDE92D872B95FEAF00C6A055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE92D862B95FEAF00C6A055 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		ED5C88162B9D698700D97AE3 /* FoundFalconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconPresenter.swift; sourceTree = "<group>"; };
 		ED5C88182B9D6D9500D97AE3 /* FoundFalconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconModel.swift; sourceTree = "<group>"; };
 		ED5C881D2B9DBA0A00D97AE3 /* FoundFalconDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconDataStore.swift; sourceTree = "<group>"; };
+		ED5C881F2BA1881800D97AE3 /* FindFalconDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconDataModel.swift; sourceTree = "<group>"; };
 		EDE92D7F2B95FEAC00C6A055 /* FindingFalcon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindingFalcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE92D822B95FEAC00C6A055 /* FindingFalconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingFalconApp.swift; sourceTree = "<group>"; };
 		EDE92D842B95FEAC00C6A055 /* FindFalconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		EDE92DB52B961D4300C6A055 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED5C881F2BA1881800D97AE3 /* FindFalconDataModel.swift */,
 				EDE92DD72B96F9E500C6A055 /* FindFalconDataStore.swift */,
 				EDE92DB62B961D5500C6A055 /* Planet.swift */,
 				EDE92DBA2B961DB100C6A055 /* Token.swift */,
@@ -340,6 +343,7 @@
 				EDE92DE42B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift in Sources */,
 				ED5C881E2B9DBA0A00D97AE3 /* FoundFalconDataStore.swift in Sources */,
 				EDE92DAE2B95FF2F00C6A055 /* API.swift in Sources */,
+				ED5C88202BA1881800D97AE3 /* FindFalconDataModel.swift in Sources */,
 				ED5C88152B9D693200D97AE3 /* FoundFalconConfigurator.swift in Sources */,
 				ED5C88192B9D6D9500D97AE3 /* FoundFalconModel.swift in Sources */,
 				EDE92DB72B961D5500C6A055 /* Planet.swift in Sources */,

@@ -17,7 +17,8 @@ struct FindFalconView: View {
     var interactor: FindFalconBusinessLogic?
     var router: FindFalconRouter?
     
-    @ObservedObject private var dataStore = FindFalconDataStore()
+    @State private var dataStore = FindFalconDataStore()
+    @State private var dataModel = FindFalconDataModel()
 
     var body: some View {
         NavigationView {
@@ -26,10 +27,18 @@ struct FindFalconView: View {
                     if dataStore.isLoading {
                         ProgressView("Loading...")
                     } else {
-                        destination1
-                        destination2
-                        destination3
-                        destination4
+                        ForEach(dataModel.destinations) { destination in
+                            DestinationView(
+                                destination: destination,
+                                updatedVehicleList: { list in
+                                    dataModel.updateDestinationVehicleList(destination: destination, list: list)
+                                },
+                                updatedPlanetList: { list in
+                                    dataModel.updateDestinationPlanetList(destination: destination, list: list)
+                                }
+                            )
+                            .disabled(destination.planetList.count == 0 || destination.vehicleList.count == 0)
+                        }
                     }
                 }
                 Section(header: Text("Time taken:")) {
@@ -41,7 +50,7 @@ struct FindFalconView: View {
                     } label: {
                         Text("Find Falcon")
                     }
-                    .disabled(dataStore.selectedVehicle1 == nil || dataStore.selectedVehicle2 == nil || dataStore.selectedVehicle3 == nil || dataStore.selectedVehicle4 == nil)
+                    .disabled(dataModel.shouldButtonDisabled)
                 }
             }
             .onAppear{
@@ -59,16 +68,8 @@ struct FindFalconView: View {
     
     private var navigateToNextScreen: some View {
         router?.navigateToNextScreen(
-            selectedVehicle1: dataStore.selectedVehicle1,
-            selectedVehicle2: dataStore.selectedVehicle2,
-            selectedVehicle3: dataStore.selectedVehicle3,
-            selectedVehicle4: dataStore.selectedVehicle4,
-            selectedPlanet1: dataStore.selectedPlanet1,
-            selectedPlanet2: dataStore.selectedPlanet2,
-            selectedPlanet3: dataStore.selectedPlanet3,
-            selectedPlanet4: dataStore.selectedPlanet4,
+            dataModel: dataModel,
             token: dataStore.token,
-            totalTimeTaken: dataStore.totalTimeTaken,
             onStartAgain: {
                 startAgain()
             }
@@ -77,88 +78,19 @@ struct FindFalconView: View {
     
     private var timeTakenView: some View {
         VStack {
-            Text("\(dataStore.t1 + dataStore.t2 + dataStore.t3 + dataStore.t4)")
+            Text("\(dataModel.totalTimeTaken)")
                 .font(.largeTitle)
         }
-    }
-    
-    private var destination1: some View {
-        DestinationView(
-            name: "Destination 1",
-            planetList: $dataStore.planetList1,
-            vehicleList: $dataStore.vehicleList1,
-            selectedVehicle: $dataStore.selectedVehicle1,
-            selectedPlanet: $dataStore.selectedPlanet1,
-            vehicleListPassthroughSubject: dataStore.vLPS1,
-            planetListPassthroughSubject: dataStore.pLPS1
-        )
-        .onReceive(dataStore.vLPS1, perform: { list in
-            dataStore.updateDestinationVehicleList(destination: .one, list: list)
-        })
-        .onReceive(dataStore.pLPS1, perform: { list in
-            dataStore.updateDestinationPlanetList(destination: .one, list: list)
-        })
-    }
-    
-    private var destination2: some View {
-        DestinationView(
-            name: "Destination 2",
-            planetList: $dataStore.planetList2,
-            vehicleList: $dataStore.vehicleList2,
-            selectedVehicle: $dataStore.selectedVehicle2,
-            selectedPlanet: $dataStore.selectedPlanet2,
-            vehicleListPassthroughSubject: dataStore.vLPS2,
-            planetListPassthroughSubject: dataStore.pLPS2
-        )
-        .onReceive(dataStore.vLPS2, perform: { list in
-            dataStore.updateDestinationVehicleList(destination: .two, list: list)
-        })
-        .onReceive(dataStore.pLPS2, perform: { list in
-            dataStore.updateDestinationPlanetList(destination: .two, list: list)
-        })
-        .disabled(dataStore.planetList2.count == 0 || dataStore.vehicleList2.count == 0)
-    }
-    
-    private var destination3: some View {
-        DestinationView(
-            name: "Destination 3",
-            planetList: $dataStore.planetList3,
-            vehicleList: $dataStore.vehicleList3,
-            selectedVehicle: $dataStore.selectedVehicle3,
-            selectedPlanet: $dataStore.selectedPlanet3,
-            vehicleListPassthroughSubject: dataStore.vLPS3,
-            planetListPassthroughSubject: dataStore.pLPS3
-        )
-        .onReceive(dataStore.vLPS3, perform: { list in
-            dataStore.updateDestinationVehicleList(destination: .three, list: list)
-        })
-        .onReceive(dataStore.pLPS3, perform: { list in
-            dataStore.updateDestinationPlanetList(destination: .three, list: list)
-        })
-        .disabled(dataStore.planetList3.count == 0 || dataStore.vehicleList3.count == 0)
-    }
-    
-    private var destination4: some View {
-        DestinationView(
-            name: "Destination 4",
-            planetList: $dataStore.planetList4,
-            vehicleList: $dataStore.vehicleList4,
-            selectedVehicle: $dataStore.selectedVehicle4,
-            selectedPlanet: $dataStore.selectedPlanet4,
-            vehicleListPassthroughSubject: dataStore.vLPS4,
-            planetListPassthroughSubject: dataStore.pLPS4
-        )
-        .onReceive(dataStore.vLPS4, perform: { list in
-            dataStore.updateDestinationVehicleList(destination: .four, list: list)
-        })
-        .disabled(dataStore.planetList4.count == 0 || dataStore.vehicleList4.count == 0)
     }
 }
 
 extension FindFalconView: FindFalconDisplayLogic {
     func displayPlanetsAndVehicles(viewModel: FindingFalcon.LoadPlanetsAndVehicles.ViewModel) {
-        dataStore.planetList1 = viewModel.planets
-        dataStore.vehicleList1 = viewModel.vehicles
+        dataStore.planetList = viewModel.planets
+        dataStore.vehicleList = viewModel.vehicles
+        
+        dataModel.destinations.first?.planetList = viewModel.planets
+        dataModel.destinations.first?.vehicleList = viewModel.vehicles
     }
     
     func displayToken(viewModel: FindingFalcon.RetrieveToken.ViewModel) {
@@ -184,7 +116,9 @@ extension FindFalconView {
     }
     
     private func startAgain() {
-        dataStore.reset()
+        dataModel.reset()
+        dataModel.destinations.first?.planetList = dataStore.planetList
+        dataModel.destinations.first?.vehicleList = dataStore.vehicleList
     }
     
     private func showError(_ error: Error) {
