@@ -1,0 +1,50 @@
+name: "Test & Coverage"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  cancel_previous:
+    name: "Cancel previous Tests & Coverage"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          workflow_id: ${{ github.event.workflow.id }}
+          
+  build:
+    name: 'Tests & Coverage(v2)'
+    needs: cancel_previous
+    runs-on: macos-latest
+    env:
+      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Install sonar-scanner and build-wrapper
+        uses: SonarSource/sonarcloud-github-c-cpp@v2
+      
+      - name: Install xcpretty
+        run: gem install xcpretty
+
+      - name: Run tests(iOS)
+        run: |
+          xcodebuild -project FindingFalcon.xcodeproj -scheme FindingFalconTests test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15' -enableCodeCoverage YES -derivedDataPath build | xcpretty
+      
+      - name: Collect coverage into one XML report
+        run: |
+          bash xccov-to-generic.sh build/Logs/Test/*.xcresult/ > generic-coverage.xml
+          
+      - name: SonarCloud Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          sonar-scanner -Dsonar.host.url=https://sonarcloud.io
+#        uses: SonarSource/sonarcloud-github-action@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
