@@ -9,13 +9,16 @@ import SwiftUI
 
 struct SelectVehicleView: View {
     let vehicle: Vehicle
+    let selectedVehicle: Vehicle?
     let onSelectVehicle: (Vehicle) -> Void
     
     init(
         vehicle: Vehicle,
+        selectedVehicle: Vehicle?,
         onSelectVehicle: @escaping (Vehicle) -> Void
         ) {
         self.vehicle = vehicle
+        self.selectedVehicle = selectedVehicle
         self.onSelectVehicle = onSelectVehicle
     }
     
@@ -24,8 +27,8 @@ struct SelectVehicleView: View {
             self.onSelectVehicle(self.vehicle)
         }) {
             HStack(alignment: .center, spacing: 10) {
-                Image(systemName: self.vehicle.selected ? "largecircle.fill.circle" : "circle")
-                Text("\(vehicle.name) (\(vehicle.totalNo))")
+                Image(systemName: selectedVehicle?.name == vehicle.name ? "largecircle.fill.circle" : "circle")
+                Text("\(vehicle.name) (\(selectedVehicle?.name == vehicle.name ? (vehicle.totalNo - 1) : vehicle.totalNo))")
                 Spacer()
             }
         }

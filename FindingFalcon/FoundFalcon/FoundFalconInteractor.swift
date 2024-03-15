@@ -20,12 +20,12 @@ final class FoundFalconInteractor: FoundFalconBusinessLogic {
     
     private let dataModel: FindFalconDataModel
     private let token: Token?
-    private let onStartAgain: () -> Void
+    private let onStartAgain: (() -> Void)?
 
     init(
         dataModel: FindFalconDataModel,
         token: Token?,
-        onStartAgain: @escaping () -> Void
+        onStartAgain: (() -> Void)?
     ) {
         self.dataModel = dataModel
         self.token = token
@@ -56,7 +56,7 @@ final class FoundFalconInteractor: FoundFalconBusinessLogic {
     }
     
     nonisolated func startAgain() {
-        onStartAgain()
+        onStartAgain?()
     }
     
     func getTotalTimeTaken() async {

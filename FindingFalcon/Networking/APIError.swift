@@ -10,5 +10,5 @@ import Foundation
 enum APIError: Error {
     case badURLRequest
     case noResponse
-    case noData
+    case noData(result: APIResult)
 }

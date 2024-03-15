@@ -9,8 +9,7 @@ import Foundation
 
 struct Vehicle: Equatable, Hashable {
     let name: String
-    var totalNo: Int
+    let totalNo: Int
     let maxDistance: Int
     let speed: Int
-    var selected: Bool = false
 }

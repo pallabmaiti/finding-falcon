@@ -15,7 +15,7 @@ enum FoundFalcon {
             let vehicleNames: [String]
         }
         
-        struct Response: Codable {
+        struct Response: Codable, Equatable {
             let planetName: String?
             let status: String
         }

@@ -15,7 +15,7 @@ protocol FoundFalconDisplayLogic {
 
 struct FoundFalconView: View {
     @Environment(\.dismiss) var dismiss
-    var interactor: FoundFalconInteractor?
+    var interactor: FoundFalconBusinessLogic?
         
     @ObservedObject private var dataStore = FoundFalconDataStore()
 
@@ -94,7 +94,7 @@ extension FoundFalconView: FoundFalconDisplayLogic {
 }
 
 extension FoundFalconView {
-    private func findFalcon() async {
+    func findFalcon() async {
         do {
             try await interactor?.findFalcon()
         } catch {
@@ -102,11 +102,11 @@ extension FoundFalconView {
         }
     }
     
-    private func startAgain() {
+    func startAgain() {
         interactor?.startAgain()
     }
     
-    private func getTotalTimeTaken() async {
+    func getTotalTimeTaken() async {
         await interactor?.getTotalTimeTaken()
     }
 }

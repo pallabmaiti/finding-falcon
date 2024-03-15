@@ -15,11 +15,40 @@
 		ED5C88192B9D6D9500D97AE3 /* FoundFalconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88182B9D6D9500D97AE3 /* FoundFalconModel.swift */; };
 		ED5C881E2B9DBA0A00D97AE3 /* FoundFalconDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C881D2B9DBA0A00D97AE3 /* FoundFalconDataStore.swift */; };
 		ED5C88202BA1881800D97AE3 /* FindFalconDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C881F2BA1881800D97AE3 /* FindFalconDataModel.swift */; };
+		ED5C88232BA1FC4000D97AE3 /* ModelMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88222BA1FC4000D97AE3 /* ModelMocks.swift */; };
+		ED5C88262BA1FE3500D97AE3 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88252BA1FE3500D97AE3 /* Mocks.swift */; };
+		ED5C88282BA204B300D97AE3 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88272BA204B300D97AE3 /* APIClientMock.swift */; };
+		ED5C882B2BA2097E00D97AE3 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C882A2BA2097E00D97AE3 /* NetworkManagerTests.swift */; };
+		ED5C882D2BA3389500D97AE3 /* ServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C882C2BA3389500D97AE3 /* ServerMock.swift */; };
+		ED5C882F2BA339AA00D97AE3 /* URLSessionClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C882E2BA339AA00D97AE3 /* URLSessionClientTests.swift */; };
+		ED5C88312BA3520A00D97AE3 /* ResponseHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88302BA3520A00D97AE3 /* ResponseHandlerTests.swift */; };
+		ED5C88352BA42AA700D97AE3 /* FoundFalconPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88342BA42AA700D97AE3 /* FoundFalconPresenterMock.swift */; };
+		ED5C88372BA42BED00D97AE3 /* FoundFalconInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88362BA42BED00D97AE3 /* FoundFalconInteractorTests.swift */; };
+		ED5C883A2BA42E4100D97AE3 /* FoundFalconWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88392BA42E4100D97AE3 /* FoundFalconWorkerMock.swift */; };
+		ED5C883C2BA43AF600D97AE3 /* FoundFalconDisplayMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C883B2BA43AF600D97AE3 /* FoundFalconDisplayMock.swift */; };
+		ED5C883E2BA43BDA00D97AE3 /* FoundFalconPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C883D2BA43BDA00D97AE3 /* FoundFalconPresenterTests.swift */; };
+		ED5C88402BA4410200D97AE3 /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C883F2BA4410200D97AE3 /* NetworkManagerMock.swift */; };
+		ED5C88422BA44C4E00D97AE3 /* FoundFalconWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88412BA44C4E00D97AE3 /* FoundFalconWorkerTests.swift */; };
+		ED5C88442BA44E7900D97AE3 /* FoundFalconInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88432BA44E7900D97AE3 /* FoundFalconInteractorMock.swift */; };
+		ED5C88462BA44EF500D97AE3 /* FoundFalconViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88452BA44EF500D97AE3 /* FoundFalconViewTests.swift */; };
+		ED5C88482BA4507900D97AE3 /* FoundFalconModelMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88472BA4507900D97AE3 /* FoundFalconModelMocks.swift */; };
+		ED5C884B2BA4514D00D97AE3 /* FindFalconModelMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C884A2BA4514D00D97AE3 /* FindFalconModelMocks.swift */; };
+		ED5C884E2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C884D2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift */; };
+		ED5C88502BA47D2200D97AE3 /* FindFalconInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C884F2BA47D2200D97AE3 /* FindFalconInteractorMock.swift */; };
+		ED5C88522BA47E0B00D97AE3 /* FindFalconPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88512BA47E0B00D97AE3 /* FindFalconPresenterMock.swift */; };
+		ED5C88542BA47E3100D97AE3 /* FindFalconTokenWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88532BA47E3100D97AE3 /* FindFalconTokenWorkerMock.swift */; };
+		ED5C88562BA47E4100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88552BA47E4100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerMock.swift */; };
+		ED5C88582BA4823500D97AE3 /* FindFalconInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88572BA4823500D97AE3 /* FindFalconInteractorTests.swift */; };
+		ED5C885A2BA4824C00D97AE3 /* FindFalconPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88592BA4824C00D97AE3 /* FindFalconPresenterTests.swift */; };
+		ED5C885C2BA4826900D97AE3 /* FindFalconViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C885B2BA4826900D97AE3 /* FindFalconViewTests.swift */; };
+		ED5C885E2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C885D2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift */; };
+		ED5C88602BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */; };
+		ED5C88622BA4A58C00D97AE3 /* FindFalconDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */; };
+		ED5C88642BA4B79800D97AE3 /* FindFalconDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */; };
 		EDE92D832B95FEAC00C6A055 /* FindingFalconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92D822B95FEAC00C6A055 /* FindingFalconApp.swift */; };
 		EDE92D852B95FEAC00C6A055 /* FindFalconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92D842B95FEAC00C6A055 /* FindFalconView.swift */; };
 		EDE92D872B95FEAF00C6A055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE92D862B95FEAF00C6A055 /* Assets.xcassets */; };
 		EDE92D8A2B95FEAF00C6A055 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE92D892B95FEAF00C6A055 /* Preview Assets.xcassets */; };
-		EDE92D942B95FEAF00C6A055 /* FindingFalconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92D932B95FEAF00C6A055 /* FindingFalconTests.swift */; };
 		EDE92DAE2B95FF2F00C6A055 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DAD2B95FF2F00C6A055 /* API.swift */; };
 		EDE92DB02B96023400C6A055 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DAF2B96023400C6A055 /* NetworkManager.swift */; };
 		EDE92DB22B96026000C6A055 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DB12B96026000C6A055 /* APIClient.swift */; };
@@ -60,13 +89,42 @@
 		ED5C88182B9D6D9500D97AE3 /* FoundFalconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconModel.swift; sourceTree = "<group>"; };
 		ED5C881D2B9DBA0A00D97AE3 /* FoundFalconDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconDataStore.swift; sourceTree = "<group>"; };
 		ED5C881F2BA1881800D97AE3 /* FindFalconDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconDataModel.swift; sourceTree = "<group>"; };
+		ED5C88222BA1FC4000D97AE3 /* ModelMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMocks.swift; sourceTree = "<group>"; };
+		ED5C88252BA1FE3500D97AE3 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		ED5C88272BA204B300D97AE3 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
+		ED5C882A2BA2097E00D97AE3 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		ED5C882C2BA3389500D97AE3 /* ServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMock.swift; sourceTree = "<group>"; };
+		ED5C882E2BA339AA00D97AE3 /* URLSessionClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionClientTests.swift; sourceTree = "<group>"; };
+		ED5C88302BA3520A00D97AE3 /* ResponseHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandlerTests.swift; sourceTree = "<group>"; };
+		ED5C88342BA42AA700D97AE3 /* FoundFalconPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconPresenterMock.swift; sourceTree = "<group>"; };
+		ED5C88362BA42BED00D97AE3 /* FoundFalconInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconInteractorTests.swift; sourceTree = "<group>"; };
+		ED5C88392BA42E4100D97AE3 /* FoundFalconWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconWorkerMock.swift; sourceTree = "<group>"; };
+		ED5C883B2BA43AF600D97AE3 /* FoundFalconDisplayMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconDisplayMock.swift; sourceTree = "<group>"; };
+		ED5C883D2BA43BDA00D97AE3 /* FoundFalconPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconPresenterTests.swift; sourceTree = "<group>"; };
+		ED5C883F2BA4410200D97AE3 /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
+		ED5C88412BA44C4E00D97AE3 /* FoundFalconWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconWorkerTests.swift; sourceTree = "<group>"; };
+		ED5C88432BA44E7900D97AE3 /* FoundFalconInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconInteractorMock.swift; sourceTree = "<group>"; };
+		ED5C88452BA44EF500D97AE3 /* FoundFalconViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconViewTests.swift; sourceTree = "<group>"; };
+		ED5C88472BA4507900D97AE3 /* FoundFalconModelMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundFalconModelMocks.swift; sourceTree = "<group>"; };
+		ED5C884A2BA4514D00D97AE3 /* FindFalconModelMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconModelMocks.swift; sourceTree = "<group>"; };
+		ED5C884D2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconDisplayMock.swift; sourceTree = "<group>"; };
+		ED5C884F2BA47D2200D97AE3 /* FindFalconInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconInteractorMock.swift; sourceTree = "<group>"; };
+		ED5C88512BA47E0B00D97AE3 /* FindFalconPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconPresenterMock.swift; sourceTree = "<group>"; };
+		ED5C88532BA47E3100D97AE3 /* FindFalconTokenWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconTokenWorkerMock.swift; sourceTree = "<group>"; };
+		ED5C88552BA47E4100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconPlanetsAndVehiclesWorkerMock.swift; sourceTree = "<group>"; };
+		ED5C88572BA4823500D97AE3 /* FindFalconInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconInteractorTests.swift; sourceTree = "<group>"; };
+		ED5C88592BA4824C00D97AE3 /* FindFalconPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconPresenterTests.swift; sourceTree = "<group>"; };
+		ED5C885B2BA4826900D97AE3 /* FindFalconViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconViewTests.swift; sourceTree = "<group>"; };
+		ED5C885D2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconTokenWorkerTests.swift; sourceTree = "<group>"; };
+		ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconPlanetsAndVehiclesWorkerTests.swift; sourceTree = "<group>"; };
+		ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconDataModelTests.swift; sourceTree = "<group>"; };
+		ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconDataStoreTests.swift; sourceTree = "<group>"; };
 		EDE92D7F2B95FEAC00C6A055 /* FindingFalcon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindingFalcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE92D822B95FEAC00C6A055 /* FindingFalconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingFalconApp.swift; sourceTree = "<group>"; };
 		EDE92D842B95FEAC00C6A055 /* FindFalconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconView.swift; sourceTree = "<group>"; };
 		EDE92D862B95FEAF00C6A055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE92D892B95FEAF00C6A055 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDE92D8F2B95FEAF00C6A055 /* FindingFalconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindingFalconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDE92D932B95FEAF00C6A055 /* FindingFalconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingFalconTests.swift; sourceTree = "<group>"; };
 		EDE92DAD2B95FF2F00C6A055 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		EDE92DAF2B96023400C6A055 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EDE92DB12B96026000C6A055 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -120,6 +178,95 @@
 			path = FoundFalcon;
 			sourceTree = "<group>";
 		};
+		ED5C88212BA1FC2300D97AE3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C883F2BA4410200D97AE3 /* NetworkManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		ED5C88242BA1FE2000D97AE3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C88252BA1FE3500D97AE3 /* Mocks.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ED5C88292BA2095E00D97AE3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C88492BA450E200D97AE3 /* Mocks */,
+				ED5C882A2BA2097E00D97AE3 /* NetworkManagerTests.swift */,
+				ED5C88302BA3520A00D97AE3 /* ResponseHandlerTests.swift */,
+				ED5C882E2BA339AA00D97AE3 /* URLSessionClientTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		ED5C88322BA3625300D97AE3 /* FoundFalcon */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C88362BA42BED00D97AE3 /* FoundFalconInteractorTests.swift */,
+				ED5C883D2BA43BDA00D97AE3 /* FoundFalconPresenterTests.swift */,
+				ED5C88452BA44EF500D97AE3 /* FoundFalconViewTests.swift */,
+				ED5C88412BA44C4E00D97AE3 /* FoundFalconWorkerTests.swift */,
+				ED5C88382BA42E3000D97AE3 /* Mocks */,
+			);
+			path = FoundFalcon;
+			sourceTree = "<group>";
+		};
+		ED5C88332BA3625F00D97AE3 /* FindFalcon */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */,
+				ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */,
+				ED5C88572BA4823500D97AE3 /* FindFalconInteractorTests.swift */,
+				ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */,
+				ED5C88592BA4824C00D97AE3 /* FindFalconPresenterTests.swift */,
+				ED5C885D2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift */,
+				ED5C885B2BA4826900D97AE3 /* FindFalconViewTests.swift */,
+				ED5C884C2BA451B400D97AE3 /* Mocks */,
+			);
+			path = FindFalcon;
+			sourceTree = "<group>";
+		};
+		ED5C88382BA42E3000D97AE3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C883B2BA43AF600D97AE3 /* FoundFalconDisplayMock.swift */,
+				ED5C88432BA44E7900D97AE3 /* FoundFalconInteractorMock.swift */,
+				ED5C88472BA4507900D97AE3 /* FoundFalconModelMocks.swift */,
+				ED5C88342BA42AA700D97AE3 /* FoundFalconPresenterMock.swift */,
+				ED5C88392BA42E4100D97AE3 /* FoundFalconWorkerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		ED5C88492BA450E200D97AE3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C88272BA204B300D97AE3 /* APIClientMock.swift */,
+				ED5C882C2BA3389500D97AE3 /* ServerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		ED5C884C2BA451B400D97AE3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C884D2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift */,
+				ED5C884F2BA47D2200D97AE3 /* FindFalconInteractorMock.swift */,
+				ED5C884A2BA4514D00D97AE3 /* FindFalconModelMocks.swift */,
+				ED5C88552BA47E4100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerMock.swift */,
+				ED5C88512BA47E0B00D97AE3 /* FindFalconPresenterMock.swift */,
+				ED5C88532BA47E3100D97AE3 /* FindFalconTokenWorkerMock.swift */,
+				ED5C88222BA1FC4000D97AE3 /* ModelMocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		EDE92D762B95FEAC00C6A055 = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +309,11 @@
 		EDE92D922B95FEAF00C6A055 /* FindingFalconTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDE92D932B95FEAF00C6A055 /* FindingFalconTests.swift */,
+				ED5C88332BA3625F00D97AE3 /* FindFalcon */,
+				ED5C88322BA3625300D97AE3 /* FoundFalcon */,
+				ED5C88212BA1FC2300D97AE3 /* Mocks */,
+				ED5C88292BA2095E00D97AE3 /* Networking */,
+				ED5C88242BA1FE2000D97AE3 /* Utilities */,
 			);
 			path = FindingFalconTests;
 			sourceTree = "<group>";
@@ -362,7 +513,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDE92D942B95FEAF00C6A055 /* FindingFalconTests.swift in Sources */,
+				ED5C882B2BA2097E00D97AE3 /* NetworkManagerTests.swift in Sources */,
+				ED5C88282BA204B300D97AE3 /* APIClientMock.swift in Sources */,
+				ED5C88602BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift in Sources */,
+				ED5C88502BA47D2200D97AE3 /* FindFalconInteractorMock.swift in Sources */,
+				ED5C88542BA47E3100D97AE3 /* FindFalconTokenWorkerMock.swift in Sources */,
+				ED5C88462BA44EF500D97AE3 /* FoundFalconViewTests.swift in Sources */,
+				ED5C88352BA42AA700D97AE3 /* FoundFalconPresenterMock.swift in Sources */,
+				ED5C88622BA4A58C00D97AE3 /* FindFalconDataModelTests.swift in Sources */,
+				ED5C884E2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift in Sources */,
+				ED5C88642BA4B79800D97AE3 /* FindFalconDataStoreTests.swift in Sources */,
+				ED5C88312BA3520A00D97AE3 /* ResponseHandlerTests.swift in Sources */,
+				ED5C88522BA47E0B00D97AE3 /* FindFalconPresenterMock.swift in Sources */,
+				ED5C883E2BA43BDA00D97AE3 /* FoundFalconPresenterTests.swift in Sources */,
+				ED5C885C2BA4826900D97AE3 /* FindFalconViewTests.swift in Sources */,
+				ED5C883C2BA43AF600D97AE3 /* FoundFalconDisplayMock.swift in Sources */,
+				ED5C88232BA1FC4000D97AE3 /* ModelMocks.swift in Sources */,
+				ED5C88582BA4823500D97AE3 /* FindFalconInteractorTests.swift in Sources */,
+				ED5C88422BA44C4E00D97AE3 /* FoundFalconWorkerTests.swift in Sources */,
+				ED5C884B2BA4514D00D97AE3 /* FindFalconModelMocks.swift in Sources */,
+				ED5C88372BA42BED00D97AE3 /* FoundFalconInteractorTests.swift in Sources */,
+				ED5C882D2BA3389500D97AE3 /* ServerMock.swift in Sources */,
+				ED5C883A2BA42E4100D97AE3 /* FoundFalconWorkerMock.swift in Sources */,
+				ED5C88442BA44E7900D97AE3 /* FoundFalconInteractorMock.swift in Sources */,
+				ED5C885A2BA4824C00D97AE3 /* FindFalconPresenterTests.swift in Sources */,
+				ED5C88262BA1FE3500D97AE3 /* Mocks.swift in Sources */,
+				ED5C88562BA47E4100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerMock.swift in Sources */,
+				ED5C885E2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift in Sources */,
+				ED5C882F2BA339AA00D97AE3 /* URLSessionClientTests.swift in Sources */,
+				ED5C88482BA4507900D97AE3 /* FoundFalconModelMocks.swift in Sources */,
+				ED5C88402BA4410200D97AE3 /* NetworkManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

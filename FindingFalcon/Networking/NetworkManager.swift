@@ -16,7 +16,7 @@ protocol ServiceType {
     func getPlanets() async throws -> APIResponse<[FindingFalcon.LoadPlanets.Response]>
 }
 
-final class NetworkManager: ServiceType {
+final class NetworkManager {
     let apiClient: APIClient
     let responseHandler: ResponseHandlerProtocol
     
@@ -25,6 +25,21 @@ final class NetworkManager: ServiceType {
         self.responseHandler = responseHandler
     }
     
+    private func send<T>(api: API) async throws -> APIResponse<T> {
+        let result = try await apiClient.send(api: api)
+        return try await self.parseResult(result: result)
+    }
+    
+    private func parseResult<T: Codable>(result: APIResult) async throws -> APIResponse<T> {
+        if let object: T = try self.responseHandler.parseData(result.data) {
+            return APIResponse(value: object, needsRetry: result.status.needsRetry)
+        } else {
+            throw APIError.noData(result: result)
+        }
+    }
+}
+
+extension NetworkManager: ServiceType {
     func findFalcon(_ request: FoundFalcon.Find.Request) async throws -> APIResponse<FoundFalcon.Find.Response> {
         return try await send(api: API.findFalcon(request))
     }
@@ -39,19 +54,6 @@ final class NetworkManager: ServiceType {
     
     func getVehicles() async throws -> APIResponse<[FindingFalcon.LoadVehicles.Response]> {
         return try await send(api: .getVehicles)
-    }
-    
-    private func send<T>(api: API) async throws -> APIResponse<T> {
-        let result = try await apiClient.send(api: api)
-        return try await self.parseResult(result: result)
-    }
-    
-    private func parseResult<T: Codable>(result: APIResult) async throws -> APIResponse<T> {
-        if let object: T = try self.responseHandler.parseData(result.data) {
-            return APIResponse(value: object, needsRetry: result.status.needsRetry)
-        } else {
-            throw APIError.noData
-        }
     }
 }
 

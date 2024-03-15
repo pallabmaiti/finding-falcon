@@ -35,7 +35,7 @@ enum FindingFalcon {
     enum LoadPlanetsAndVehicles {
         struct Request { }
         
-        struct Response {
+        struct Response: Equatable {
             let planets: [LoadPlanets.Response]
             let vehicles: [LoadVehicles.Response]
         }
@@ -49,7 +49,7 @@ enum FindingFalcon {
     enum RetrieveToken {
         struct Request { }
         
-        struct Response: Codable {
+        struct Response: Codable, Equatable {
             let token: String
         }
         

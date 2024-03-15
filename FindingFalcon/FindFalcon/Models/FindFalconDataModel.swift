@@ -15,7 +15,7 @@ enum DestinationType {
 }
 
 @Observable
-class Destination: Identifiable {
+final class Destination: Identifiable {
     var planetList: [Planet] = []
     var vehicleList: [Vehicle] = []
     var selectedVehicle: Vehicle?
@@ -30,8 +30,12 @@ class Destination: Identifiable {
     }
     
     let name: String
-
-    init(name: String) {
+    
+    required init(planetList: [Planet] = [], vehicleList: [Vehicle] = [], selectedVehicle: Vehicle? = nil, selectedPlanet: Planet? = nil, name: String) {
+        self.planetList = planetList
+        self.vehicleList = vehicleList
+        self.selectedVehicle = selectedVehicle
+        self.selectedPlanet = selectedPlanet
         self.name = name
     }
     
@@ -52,14 +56,9 @@ class Destination: Identifiable {
 }
 
 @Observable
-class FindFalconDataModel {
-    var destinations = [
-        Destination(name: "Destination 1"),
-        Destination(name: "Destination 2"),
-        Destination(name: "Destination 3"),
-        Destination(name: "Destination 4")
-    ]
-    
+final class FindFalconDataModel {
+    var destinations: [Destination]
+        
     var totalTimeTaken: Int {
         return destinations.map{ $0.timeTaken }.reduce(0) { $0 + $1 }
     }
@@ -75,25 +74,39 @@ class FindFalconDataModel {
         return false
     }
     
+    required init(destinations: [Destination] = [
+        Destination(name: "Destination 1"),
+        Destination(name: "Destination 2"),
+        Destination(name: "Destination 3"),
+        Destination(name: "Destination 4")
+    ]) {
+        self.destinations = destinations
+    }
+    
     func reset() {
         destinations.forEach{ $0.reset() }
     }
     
-    func updateDestinationVehicleList(destination: Destination, list: [Vehicle]) {
+    func updateNextDestinationVehicleList(destination: Destination) {
         if let index = destinations.firstIndex(where: { $0.id == destination.id }), index < (destinations.count - 1) {
             for i in (index + 1)..<destinations.count {
                 destinations[i].resetVehicle()
             }
-            destinations[index + 1].vehicleList = list.map{ Vehicle(name: $0.name, totalNo: $0.totalNo, maxDistance: $0.maxDistance, speed: $0.speed) }
+            destinations[index + 1].vehicleList = destination.vehicleList.map{ Vehicle(
+                name: $0.name,
+                totalNo: ($0.name == destination.selectedVehicle?.name) ? ($0.totalNo - 1) : $0.totalNo,
+                maxDistance: $0.maxDistance,
+                speed: $0.speed
+            ) }
         }
     }
     
-    func updateDestinationPlanetList(destination: Destination, list: [Planet]) {
+    func updateNextDestinationPlanetList(destination: Destination) {
         if let index = destinations.firstIndex(where: { $0.id == destination.id }), index < (destinations.count - 1) {
             for i in (index + 1)..<destinations.count {
                 destinations[i].resetPlanet()
             }
-            var pList = list.map{ Planet(name: $0.name, distance: $0.distance) }
+            var pList = destination.planetList.map{ Planet(name: $0.name, distance: $0.distance) }
             pList.removeAll(where: { $0.name == destination.selectedPlanet?.name })
             destinations[index + 1].planetList = pList
         }

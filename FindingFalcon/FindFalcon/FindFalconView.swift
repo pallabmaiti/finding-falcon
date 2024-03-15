@@ -30,11 +30,11 @@ struct FindFalconView: View {
                         ForEach(dataModel.destinations) { destination in
                             DestinationView(
                                 destination: destination,
-                                updatedVehicleList: { list in
-                                    dataModel.updateDestinationVehicleList(destination: destination, list: list)
+                                onVehicleSelect: {
+                                    dataModel.updateNextDestinationVehicleList(destination: destination)
                                 },
-                                updatedPlanetList: { list in
-                                    dataModel.updateDestinationPlanetList(destination: destination, list: list)
+                                onPlanetSelect: {
+                                    dataModel.updateNextDestinationPlanetList(destination: destination)
                                 }
                             )
                             .disabled(destination.planetList.count == 0 || destination.vehicleList.count == 0)
@@ -99,7 +99,7 @@ extension FindFalconView: FindFalconDisplayLogic {
 }
 
 extension FindFalconView {
-    private func retrieveToken() async {
+    func retrieveToken() async {
         do {
             try await interactor?.retrieveToken()
         } catch {
@@ -107,7 +107,7 @@ extension FindFalconView {
         }
     }
     
-    private func getPlanetsAndVehicles() async {
+    func getPlanetsAndVehicles() async {
         do {
             try await interactor?.getPlanetsAndVehicles()
         } catch {
@@ -126,6 +126,6 @@ extension FindFalconView {
     }
 }
 
-#Preview {
-    FindFalconView().configureView()
-}
+//#Preview {
+//    FindFalconView().configureView()
+//}

@@ -19,12 +19,16 @@ final class FoundFalconWorker: FoundFalconLogic {
     }
     
     func findFalcon(_ request: FoundFalcon.Find.Request) async throws -> FoundFalcon.Find.Response {
-        let response = try await networkManager.findFalcon(request)
-        if response.needsRetry {
-            let response = try await networkManager.retrieveToken()
-            return try await findFalcon(FoundFalcon.Find.Request(token: response.value.token, planetNames: request.planetNames, vehicleNames: request.vehicleNames))
-        } else {
+        do {
+            let response = try await networkManager.findFalcon(request)
             return response.value
+        } catch {
+            if let error: APIError = error as? APIError, case .noData(let result) = error, result.status.needsRetry {
+                let response = try await networkManager.retrieveToken()
+                return try await findFalcon(FoundFalcon.Find.Request(token: response.value.token, planetNames: request.planetNames, vehicleNames: request.vehicleNames))
+            } else {
+                throw error
+            }
         }
     }
 }

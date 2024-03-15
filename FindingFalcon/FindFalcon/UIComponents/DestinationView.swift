@@ -10,8 +10,8 @@ import Combine
 
 struct DestinationView: View {
     var destination: Destination
-    var updatedVehicleList: ([Vehicle]) -> Void
-    var updatedPlanetList: ([Planet]) -> Void
+    var onVehicleSelect: (() -> Void)?
+    var onPlanetSelect: (() -> Void)?
 
     @State private var isSelected = false
     
@@ -49,46 +49,33 @@ struct DestinationView: View {
             }
             if destination.selectedPlanet != nil {
                 ForEach(destination.vehicleList, id: \.self) {
-                    SelectVehicleView(vehicle: $0, onSelectVehicle: updateVehicleList)
+                    SelectVehicleView(vehicle: $0, selectedVehicle: destination.selectedVehicle, onSelectVehicle: updateVehicleList)
                 }
             }
         }
     }
     
     private func updateVehicleList(_ vehicle: Vehicle) {
-        if !vehicle.selected, vehicle.totalNo == 0 {
+        // if vehicle is not available, return from here.
+        guard vehicle.totalNo > 0 else {
             return
         }
-        guard let sP = destination.selectedPlanet, sP.distance <= vehicle.maxDistance else {
+        // if vehicle's max distance is less than the selected planet distance, return from here.
+        guard let selectedPlanet = destination.selectedPlanet, selectedPlanet.distance <= vehicle.maxDistance else {
             return
         }
+        // if vehicle is selected already, return from here.
         if let selectedVehicle = destination.selectedVehicle, selectedVehicle.name == vehicle.name {
             return
         }
-        let list = destination.vehicleList.map({ item in
-            var v = item
-            if let sV = destination.selectedVehicle, item.name == sV.name {
-                v = sV
-            } else {
-                v.selected = (item.name == vehicle.name && item.totalNo > 0)
-                v.totalNo = (item.name == vehicle.name && item.totalNo > 0) ? (v.totalNo - 1) : v.totalNo
-            }
-            return v
-        })
-        destination.vehicleList = list
         destination.selectedVehicle = vehicle
-        updatedVehicleList(list)
+        onVehicleSelect?()
     }
     
     private func updatePlanetList(_ planet: Planet) {
-        let list = destination.planetList.map { item in
-            var p = item
-            p.selected = item.name == planet.name
-            return p
-        }
         destination.selectedPlanet = planet
         isSelected = false
-        updatedPlanetList(list)
+        onPlanetSelect?()
     }
     
     private func onButtonSelect() {
