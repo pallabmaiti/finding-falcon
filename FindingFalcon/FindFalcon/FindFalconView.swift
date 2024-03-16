@@ -17,8 +17,8 @@ struct FindFalconView: View {
     var interactor: FindFalconBusinessLogic?
     var router: FindFalconRouter?
     
-    @ObservedObject private var dataStore = FindFalconDataStore()
-    @ObservedObject private var dataModel = FindFalconDataModel()
+    @ObservedObject var dataStore = FindFalconDataStore()
+    @ObservedObject var dataModel = FindFalconDataModel()
 
     var body: some View {
         NavigationView {
@@ -57,7 +57,6 @@ struct FindFalconView: View {
                 Task {
                     await getPlanetsAndVehicles()
                     await retrieveToken()
-                    dataStore.isLoading = false
                 }
             }
             .navigationTitle("Find Falcon")
@@ -95,6 +94,7 @@ extension FindFalconView: FindFalconDisplayLogic {
     
     func displayToken(viewModel: FindingFalcon.RetrieveToken.ViewModel) {
         dataStore.token = viewModel.token
+        dataStore.isLoading = false
     }
 }
 
