@@ -12,7 +12,7 @@ import ViewInspector
 final class FindFalconViewTests: XCTestCase {
     
     @MainActor func test_ProgressView() throws {
-        var view = FindFalconView()
+        let view = FindFalconView()
         let progressViewText = try view.inspect().navigationView().form().section(0).progressView(0).labelView().text().string()
 
         XCTAssertEqual(progressViewText, "Loading...")
