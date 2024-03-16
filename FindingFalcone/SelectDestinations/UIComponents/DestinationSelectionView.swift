@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct DestinationSelectionView: View {
     @ObservedObject var destination: Destination

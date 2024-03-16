@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 protocol SelectDestinationsDisplayLogic {
     func displayPlanetsAndVehicles(viewModel: SelectDestinations.LoadPlanetsAndVehicles.ViewModel)
@@ -52,7 +51,7 @@ struct SelectDestinationsView: View {
                     } label: {
                         Text("Find Falcone")
                     }
-                    .disabled(dataModel.shouldButtonDisabled)
+                    .disabled(dataModel.shouldFindFalconeDisabled)
                 }
             }
             .onAppear{
