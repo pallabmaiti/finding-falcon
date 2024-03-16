@@ -11,6 +11,7 @@ import Foundation
 class FindFalconInteractorMock: FindFalconBusinessLogic {
     var retrieveTokenCalled = false
     var getPlanetsAndVehiclesCalled = false
+    var startAgainCalled = false
     
     func retrieveToken() async throws {
         retrieveTokenCalled = true
@@ -18,5 +19,9 @@ class FindFalconInteractorMock: FindFalconBusinessLogic {
     
     func getPlanetsAndVehicles() async throws {
         getPlanetsAndVehiclesCalled = true
+    }
+    
+    func startAgain() {
+        startAgainCalled = true
     }
 }

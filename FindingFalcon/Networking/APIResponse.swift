@@ -33,6 +33,6 @@ enum Status {
     }
     
     var needsRetry: Bool {
-        return self == .unauthorized ? true : false
+        return self == .unauthorized
     }
 }

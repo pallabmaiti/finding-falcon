@@ -17,8 +17,8 @@ struct FindFalconView: View {
     var interactor: FindFalconBusinessLogic?
     var router: FindFalconRouter?
     
-    @State private var dataStore = FindFalconDataStore()
-    @State private var dataModel = FindFalconDataModel()
+    @ObservedObject private var dataStore = FindFalconDataStore()
+    @ObservedObject private var dataModel = FindFalconDataModel()
 
     var body: some View {
         NavigationView {
@@ -125,7 +125,3 @@ extension FindFalconView {
         print(error.localizedDescription)
     }
 }
-
-//#Preview {
-//    FindFalconView().configureView()
-//}

@@ -35,7 +35,7 @@ final class FoundFalconInteractorTests: XCTestCase {
                 
         interactor.startAgain()
         
-        wait(for: [expectation])
+        waitForExpectations(timeout: 1.0)
     }
     
     @MainActor func test_getTotalTimeTaken() async throws {

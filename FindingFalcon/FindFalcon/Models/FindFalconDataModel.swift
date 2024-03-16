@@ -14,12 +14,11 @@ enum DestinationType {
     case four
 }
 
-@Observable
-final class Destination: Identifiable {
-    var planetList: [Planet] = []
-    var vehicleList: [Vehicle] = []
-    var selectedVehicle: Vehicle?
-    var selectedPlanet: Planet?
+final class Destination: ObservableObject, Identifiable {
+    @Published var planetList: [Planet] = []
+    @Published var vehicleList: [Vehicle] = []
+    @Published var selectedVehicle: Vehicle?
+    @Published var selectedPlanet: Planet?
     let id = UUID()
     
     var timeTaken: Int {
@@ -55,9 +54,8 @@ final class Destination: Identifiable {
     }
 }
 
-@Observable
-final class FindFalconDataModel {
-    var destinations: [Destination]
+final class FindFalconDataModel: ObservableObject {
+    @Published var destinations: [Destination]
         
     var totalTimeTaken: Int {
         return destinations.map{ $0.timeTaken }.reduce(0) { $0 + $1 }
@@ -92,12 +90,14 @@ final class FindFalconDataModel {
             for i in (index + 1)..<destinations.count {
                 destinations[i].resetVehicle()
             }
-            destinations[index + 1].vehicleList = destination.vehicleList.map{ Vehicle(
+            let nextDestination = destinations[index + 1]
+            nextDestination.vehicleList = destination.vehicleList.map{ Vehicle(
                 name: $0.name,
                 totalNo: ($0.name == destination.selectedVehicle?.name) ? ($0.totalNo - 1) : $0.totalNo,
                 maxDistance: $0.maxDistance,
                 speed: $0.speed
             ) }
+            destinations[index + 1] = nextDestination
         }
     }
     
@@ -106,9 +106,11 @@ final class FindFalconDataModel {
             for i in (index + 1)..<destinations.count {
                 destinations[i].resetPlanet()
             }
+            let nextDestination = destinations[index + 1]
             var pList = destination.planetList.map{ Planet(name: $0.name, distance: $0.distance) }
             pList.removeAll(where: { $0.name == destination.selectedPlanet?.name })
-            destinations[index + 1].planetList = pList
+            nextDestination.planetList = pList
+            destinations[index + 1] = nextDestination
         }
     }
 }

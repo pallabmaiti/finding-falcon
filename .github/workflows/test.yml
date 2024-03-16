@@ -16,7 +16,7 @@ jobs:
           workflow_id: ${{ github.event.workflow.id }}
           
   build:
-    name: 'Tests & Coverage(v2)'
+    name: 'Tests & Coverage'
     needs: cancel_previous
     runs-on: macos-latest
     env:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Run tests(iOS)
         run: |
-          xcodebuild -project FindingFalcon.xcodeproj -scheme FindingFalconTests test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15' -enableCodeCoverage YES -derivedDataPath build | xcpretty
+          xcodebuild -project FindingFalcon.xcodeproj -scheme FindingFalconTests test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -enableCodeCoverage YES -derivedDataPath build | xcpretty
       
       - name: Collect coverage into one XML report
         run: |
