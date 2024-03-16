@@ -9,7 +9,7 @@ import XCTest
 @testable import FindingFalcon
 
 final class FindFalconViewTests: XCTestCase {
-    func test_retrieveToken() async {
+    @MainActor func test_retrieveToken() async {
         var view = FindFalconView()
         
         let interactor = FindFalconInteractorMock()
@@ -20,7 +20,7 @@ final class FindFalconViewTests: XCTestCase {
         XCTAssertTrue(interactor.retrieveTokenCalled)
     }
     
-    func test_getPlanetsAndVehicles() async {
+    @MainActor func test_getPlanetsAndVehicles() async {
         var view = FindFalconView()
         
         let interactor = FindFalconInteractorMock()

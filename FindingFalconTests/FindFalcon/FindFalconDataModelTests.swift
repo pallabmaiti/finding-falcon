@@ -41,16 +41,16 @@ final class FindFalconDataModelTests: XCTestCase {
     
     func test_DataModel() {
         let planet1: Planet = .mockRandom(name: .mockRandom(), distance: 200)
-        var planet2: Planet = .mockRandom(name: .mockRandom(), distance: 300)
+        let planet2: Planet = .mockRandom(name: .mockRandom(), distance: 300)
         let planet3: Planet = .mockRandom(name: .mockRandom(), distance: 100)
         
-        var planets: [Planet] = [planet1, planet2, planet3]
+        let planets: [Planet] = [planet1, planet2, planet3]
         
         let vehicle1: Vehicle = .mockRandom(name: .mockRandom(), totalNo: 2, maxDistance: 200, speed: 2)
         let vehicle2: Vehicle = .mockRandom(name: .mockRandom(), totalNo: 1, maxDistance: 300, speed: 2)
         let vehicle3: Vehicle = .mockRandom(name: .mockRandom(), totalNo: 1, maxDistance: 100, speed: 2)
         
-        var vehicles: [Vehicle] = [vehicle1, vehicle2, vehicle3]
+        let vehicles: [Vehicle] = [vehicle1, vehicle2, vehicle3]
         
         let destination1: Destination = .mockRandom(name: .mockRandom(), planetList: [], vehicleList: [], selectedVehicle: nil, selectedPlanet: nil)
         let destination2: Destination = .mockRandom(name: .mockRandom(), planetList: [], vehicleList: [], selectedVehicle: nil, selectedPlanet: nil)

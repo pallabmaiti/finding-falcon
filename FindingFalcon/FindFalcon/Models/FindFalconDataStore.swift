@@ -7,10 +7,9 @@
 
 import Foundation
 
-@Observable
-final class FindFalconDataStore {
-    var planetList: [Planet] = []
-    var vehicleList: [Vehicle] = []
-    var token: Token?
-    var isLoading = true
+final class FindFalconDataStore: ObservableObject {
+    @Published var planetList: [Planet] = []
+    @Published var vehicleList: [Vehicle] = []
+    @Published var token: Token?
+    @Published var isLoading = true
 }

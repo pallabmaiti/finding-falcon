@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct DestinationView: View {
-    var destination: Destination
+    @ObservedObject var destination: Destination
     var onVehicleSelect: (() -> Void)?
     var onPlanetSelect: (() -> Void)?
 
