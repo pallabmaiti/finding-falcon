@@ -33,18 +33,18 @@ jobs:
 
       - name: Run tests(iOS)
         run: |
-          xcodebuild -project FindingFalcon.xcodeproj -scheme FindingFalconTests test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -enableCodeCoverage YES -derivedDataPath build | xcpretty
+          xcodebuild -project FindingFalcone.xcodeproj -scheme FindingFalconeTests test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' -enableCodeCoverage YES -derivedDataPath build | xcpretty
       
       - name: Collect coverage into one XML report
         run: |
-          bash xccov-to-generic.sh build/Logs/Test/*.xcresult/ > generic-coverage.xml
+          bash Scripts/xccov-to-generic.sh build/Logs/Test/*.xcresult/ > generic-coverage.xml
           
-      - name: SonarCloud Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          sonar-scanner -Dsonar.host.url=https://sonarcloud.io
-#        uses: SonarSource/sonarcloud-github-action@master
+#      - name: SonarCloud Scan
 #        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
 #          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#        run: |
+#          sonar-scanner -Dsonar.host.url=https://sonarcloud.io
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
