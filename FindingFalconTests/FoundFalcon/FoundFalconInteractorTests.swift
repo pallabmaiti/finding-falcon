@@ -24,7 +24,7 @@ final class FoundFalconInteractorTests: XCTestCase {
         XCTAssertEqual(response, presenter.presentFalconResponse)
     }
     
-    @MainActor func test_startAgain() {
+    @MainActor func test_startAgain() async {
         let expectation = expectation(description: "Start Again should be called")
         expectation.expectedFulfillmentCount = 1
         
@@ -35,7 +35,7 @@ final class FoundFalconInteractorTests: XCTestCase {
                 
         interactor.startAgain()
         
-        wait(for: [expectation])
+        await fulfillment(of: [expectation])
     }
     
     @MainActor func test_getTotalTimeTaken() async throws {
