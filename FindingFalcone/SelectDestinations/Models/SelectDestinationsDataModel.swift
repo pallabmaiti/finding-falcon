@@ -56,21 +56,8 @@ final class Destination: ObservableObject, Identifiable {
 
 final class SelectDestinationsDataModel: ObservableObject {
     @Published var destinations: [Destination]
-        
-    var totalTimeTaken: Int {
-        return destinations.map{ $0.timeTaken }.reduce(0) { $0 + $1 }
-    }
-    
-    var shouldButtonDisabled: Bool {
-        var count = 0
-        while count < destinations.count {
-            if (destinations[count].selectedVehicle == nil) {
-                return true
-            }
-            count += 1
-        }
-        return false
-    }
+    @Published var totalTimeTaken: Int = 0
+    @Published var shouldFindFalconeDisabled = true
     
     required init(destinations: [Destination] = [
         Destination(name: "Destination 1"),
@@ -83,6 +70,8 @@ final class SelectDestinationsDataModel: ObservableObject {
     
     func reset() {
         destinations.forEach{ $0.reset() }
+        totalTimeTaken = 0
+        shouldFindFalconeDisabled = true
     }
     
     func updateNextDestinationVehicleList(destination: Destination) {
@@ -99,6 +88,8 @@ final class SelectDestinationsDataModel: ObservableObject {
             ) }
             destinations[index + 1] = nextDestination
         }
+        totalTimeTaken = destinations.map{ $0.timeTaken }.reduce(0) { $0 + $1 }
+        shouldFindFalconeDisabled = shouldDisabled()
     }
     
     func updateNextDestinationPlanetList(destination: Destination) {
@@ -112,5 +103,16 @@ final class SelectDestinationsDataModel: ObservableObject {
             nextDestination.planetList = pList
             destinations[index + 1] = nextDestination
         }
+    }
+    
+    private func shouldDisabled() -> Bool {
+        var count = 0
+        while count < destinations.count {
+            if (destinations[count].selectedVehicle == nil) {
+                return true
+            }
+            count += 1
+        }
+        return false
     }
 }

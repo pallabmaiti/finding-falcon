@@ -56,7 +56,7 @@ final class SelectDestinationsDataModelTests: XCTestCase {
         let destination2: Destination = .mockRandom(name: .mockRandom(), planetList: [], vehicleList: [], selectedVehicle: nil, selectedPlanet: nil)
         let dataModel = SelectDestinationsDataModel(destinations: [destination1, destination2])
         
-        XCTAssertTrue(dataModel.shouldButtonDisabled)
+        XCTAssertTrue(dataModel.shouldFindFalconeDisabled)
         XCTAssertEqual(dataModel.totalTimeTaken, 0)
         XCTAssertEqual(destination1.planetList, [])
         XCTAssertEqual(destination1.vehicleList, [])
@@ -86,7 +86,7 @@ final class SelectDestinationsDataModelTests: XCTestCase {
         
         destination2.selectedPlanet = planet1
         destination2.selectedVehicle = vehicle1
-        XCTAssertFalse(dataModel.shouldButtonDisabled)
+        XCTAssertFalse(dataModel.shouldFindFalconeDisabled)
         
         dataModel.reset()
         
