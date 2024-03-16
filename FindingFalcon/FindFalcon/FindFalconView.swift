@@ -126,6 +126,6 @@ extension FindFalconView {
     }
 }
 
-//#Preview {
-//    FindFalconView().configureView()
-//}
+#Preview {
+    FindFalconView().configureView()
+}
