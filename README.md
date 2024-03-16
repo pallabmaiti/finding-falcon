@@ -1,6 +1,10 @@
 <p align="center">
-	<img src="https://sonarcloud.io/api/project_badges/measure?project=pallabmaiti_finding-falcon&metric=coverage">
-	<img src="https://sonarcloud.io/api/project_badges/measure?project=pallabmaiti_finding-falcon&metric=alert_status">
+	<a href="https://sonarcloud.io/project/overview?id=pallabmaiti_finding-falcon">
+		<img src="https://sonarcloud.io/api/project_badges/measure?project=pallabmaiti_finding-falcon&metric=coverage">
+	</a>
+	<a href="https://sonarcloud.io/project/overview?id=pallabmaiti_finding-falcon">
+		<img src="https://sonarcloud.io/api/project_badges/measure?project=pallabmaiti_finding-falcon&metric=alert_status">
+	</a>
 </p>
 
 # Finding Falcone!
