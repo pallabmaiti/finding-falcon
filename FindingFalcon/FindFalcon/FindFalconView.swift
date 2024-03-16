@@ -19,7 +19,9 @@ struct FindFalconView: View {
     
     @ObservedObject var dataStore = FindFalconDataStore()
     @ObservedObject var dataModel = FindFalconDataModel()
-
+    
+    var onError: (() -> Void)?
+    
     var body: some View {
         NavigationView {
             Form {
@@ -115,13 +117,13 @@ extension FindFalconView {
         }
     }
     
-    private func startAgain() {
+    func startAgain() {
         dataModel.reset()
         dataModel.destinations.first?.planetList = dataStore.planetList
         dataModel.destinations.first?.vehicleList = dataStore.vehicleList
     }
     
-    private func showError(_ error: Error) {
-        print(error.localizedDescription)
+    func showError(_ error: Error) {
+        onError?()
     }
 }

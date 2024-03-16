@@ -69,6 +69,7 @@
 		EDE92DE22B9757B400C6A055 /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DE12B9757B400C6A055 /* DestinationView.swift */; };
 		EDE92DE42B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DE32B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift */; };
 		EDFE181D2BA5A77C0085A0E8 /* DestinationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */; };
+		EDFE18252BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE18242BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		EDE92DE12B9757B400C6A055 /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		EDE92DE32B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconPlanetsAndVehiclesWorker.swift; sourceTree = "<group>"; };
 		EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewTests.swift; sourceTree = "<group>"; };
+		EDFE18242BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconInteractorErrorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				ED5C884D2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift */,
+				EDFE18242BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift */,
 				ED5C884F2BA47D2200D97AE3 /* FindFalconInteractorMock.swift */,
 				ED5C884A2BA4514D00D97AE3 /* FindFalconModelMocks.swift */,
 				ED5C88552BA47E4100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerMock.swift */,
@@ -553,6 +556,7 @@
 				EDFE181D2BA5A77C0085A0E8 /* DestinationViewTests.swift in Sources */,
 				ED5C88352BA42AA700D97AE3 /* FoundFalconPresenterMock.swift in Sources */,
 				ED5C88622BA4A58C00D97AE3 /* FindFalconDataModelTests.swift in Sources */,
+				EDFE18252BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift in Sources */,
 				ED5C884E2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift in Sources */,
 				ED5C88642BA4B79800D97AE3 /* FindFalconDataStoreTests.swift in Sources */,
 				ED5C88312BA3520A00D97AE3 /* ResponseHandlerTests.swift in Sources */,

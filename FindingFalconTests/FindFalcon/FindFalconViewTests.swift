@@ -106,4 +106,50 @@ final class FindFalconViewTests: XCTestCase {
         
         XCTAssertFalse(view.dataStore.isLoading)
     }
+    
+    @MainActor func test_DataFetch_onError() async throws {
+        let expectation = expectation(description: "Error should occur")
+        expectation.expectedFulfillmentCount = 2
+        
+        let interactor = FindFalconInteractorErrorMock()
+                        
+        var view = FindFalconView()
+        view.interactor = interactor
+        
+        view.onError = {
+            expectation.fulfill()
+        }
+        
+        await view.getPlanetsAndVehicles()
+        await view.retrieveToken()
+        
+        await fulfillment(of: [expectation])
+    }
+    
+    @MainActor func test_startAgain() async throws {
+        var view = FindFalconView()
+        
+        let vehicle1: Vehicle = .mockRandom(name: .mockRandom(), totalNo: 1, maxDistance: 200, speed: 2)
+        let vehicle2: Vehicle = .mockRandom(name: .mockRandom(), totalNo: 1, maxDistance: 200, speed: 2)
+        
+        let planet1: Planet = .mockRandom(name: .mockRandom(), distance: 300)
+        let planet2: Planet = .mockRandom(name: .mockRandom(), distance: 300)
+
+        view.dataStore = .mockRandom(planetList: [planet1, planet2], vehicleList: [vehicle1, vehicle2])
+        
+        let destination1: Destination = .mockRandom(name: .mockRandom(), planetList: [planet1, planet2], vehicleList: [vehicle1, vehicle2], selectedVehicle: vehicle1, selectedPlanet: planet2)
+        let destination2: Destination = .mockRandom(name: .mockRandom(), planetList: [planet1, planet2], vehicleList: [vehicle1, vehicle2], selectedVehicle: vehicle2, selectedPlanet: planet1)
+        view.dataModel = .mockRandom(destinations: [destination1, destination2])
+        
+        view.startAgain()
+        
+        XCTAssertEqual(destination1.planetList, [planet1, planet2])
+        XCTAssertEqual(destination1.vehicleList, [vehicle1, vehicle2])
+        XCTAssertNil(destination1.selectedVehicle)
+        XCTAssertNil(destination1.selectedPlanet)
+        XCTAssertEqual(destination2.planetList, [])
+        XCTAssertEqual(destination2.vehicleList, [])
+        XCTAssertNil(destination2.selectedVehicle)
+        XCTAssertNil(destination2.selectedPlanet)
+    }
 }

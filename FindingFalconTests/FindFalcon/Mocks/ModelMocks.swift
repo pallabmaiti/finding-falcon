@@ -75,3 +75,18 @@ extension Token: AnyMockable {
         return Token(token: token)
     }
 }
+
+extension FindFalconDataStore: AnyMockable {
+    public static func mockAny() -> Self {
+        return mockRandom()
+    }
+    
+    static func mockRandom(
+        planetList: [Planet] = [.mockAny()],
+        vehicleList: [Vehicle] = [.mockAny()],
+        token: Token? = .mockAny(),
+        isLoading: Bool = .mockAny()
+    ) -> Self {
+        return .init(planetList: planetList, vehicleList: vehicleList, token: token, isLoading: isLoading)
+    }
+}
