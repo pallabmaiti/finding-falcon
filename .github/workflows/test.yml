@@ -40,11 +40,7 @@ jobs:
           bash Scripts/xccov-to-generic.sh build/Logs/Test/*.xcresult/ > generic-coverage.xml
           
       - name: SonarCloud Scan
-#        env:
-#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-#        run: |
-#          sonar-scanner -Dsonar.host.url=https://sonarcloud.io
-        uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          sonar-scanner -Dsonar.host.url=https://sonarcloud.io
