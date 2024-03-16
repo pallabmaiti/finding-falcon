@@ -125,7 +125,3 @@ extension FindFalconView {
         print(error.localizedDescription)
     }
 }
-
-#Preview {
-    FindFalconView().configureView()
-}
