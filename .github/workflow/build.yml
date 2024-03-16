@@ -16,7 +16,7 @@ jobs:
           workflow_id: ${{ github.event.workflow.id }}
           
   build:
-    name: 'Tests & Coverage(v2)'
+    name: 'Tests & Coverage'
     needs: cancel_previous
     runs-on: macos-latest
     env:
