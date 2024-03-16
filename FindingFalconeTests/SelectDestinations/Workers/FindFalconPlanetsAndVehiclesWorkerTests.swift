@@ -1,5 +1,5 @@
 //
-//  FindFalconPlanetsAndVehiclesWorkerTests.swift
+//  PlanetsAndVehiclesWorkerTests.swift
 //  FindingFalconeTests
 //
 //  Created by Pallab Maiti on 15/03/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import FindingFalcone
 
-final class FindFalconPlanetsAndVehiclesWorkerTests: XCTestCase {
+final class PlanetsAndVehiclesWorkerTests: XCTestCase {
     func test_getPlanetsAndVehicles() async throws {
         let planets: [SelectDestinations.LoadVehicles.Response] = [.mockAny()]
         let vehicles: [SelectDestinations.LoadPlanets.Response] = [.mockAny()]

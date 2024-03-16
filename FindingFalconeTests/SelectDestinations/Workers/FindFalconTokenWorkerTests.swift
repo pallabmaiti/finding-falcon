@@ -1,5 +1,5 @@
 //
-//  FindFalconTokenWorkerTests.swift
+//  TokenWorkerTests.swift
 //  FindingFalconeTests
 //
 //  Created by Pallab Maiti on 15/03/24.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import FindingFalcone
 
-final class FindFalconTokenWorkerTests: XCTestCase {
+final class TokenWorkerTests: XCTestCase {
     func test_retrieveToken() async throws {
         let retrieveTokenResponse: APIResponse<SelectDestinations.RetrieveToken.Response> = APIResponse(value: .mockAny(), needsRetry: false)
         let networkManager = NetworkManagerMock(retrieveTokenResponse: retrieveTokenResponse)
