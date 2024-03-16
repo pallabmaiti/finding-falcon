@@ -25,7 +25,7 @@ struct DestinationView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 Spacer()
                 Button(action:{
-                    onButtonSelect()
+                    onSelectButton()
                 }) {
                     HStack(alignment: .center, spacing: 10) {
                         Image(systemName: isSelected ? "chevron.up" : "chevron.down")
@@ -41,7 +41,7 @@ struct DestinationView: View {
                         Text(item.name)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .onTapGesture {
-                                updatePlanetList(item)
+                                onSelectPlanet(item)
                             }
                         Divider()
                     }
@@ -49,13 +49,13 @@ struct DestinationView: View {
             }
             if destination.selectedPlanet != nil {
                 ForEach(destination.vehicleList, id: \.self) {
-                    SelectVehicleView(vehicle: $0, selectedVehicle: destination.selectedVehicle, onSelectVehicle: updateVehicleList)
+                    SelectVehicleView(vehicle: $0, selectedVehicle: destination.selectedVehicle, onSelectVehicle: onSelectVehicle)
                 }
             }
         }
     }
     
-    private func updateVehicleList(_ vehicle: Vehicle) {
+    func onSelectVehicle(_ vehicle: Vehicle) {
         // if vehicle is not available, return from here.
         guard vehicle.totalNo > 0 else {
             return
@@ -72,13 +72,13 @@ struct DestinationView: View {
         onVehicleSelect?()
     }
     
-    private func updatePlanetList(_ planet: Planet) {
+    func onSelectPlanet(_ planet: Planet) {
         destination.selectedPlanet = planet
         isSelected = false
         onPlanetSelect?()
     }
     
-    private func onButtonSelect() {
+    func onSelectButton() {
         isSelected = !isSelected
     }
 }

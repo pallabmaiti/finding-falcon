@@ -45,7 +45,6 @@
 		ED5C88602BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */; };
 		ED5C88622BA4A58C00D97AE3 /* FindFalconDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */; };
 		ED5C88642BA4B79800D97AE3 /* FindFalconDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */; };
-		ED7F96902BA59EFF008BB97C /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = ED7F968F2BA59EFF008BB97C /* ViewInspector */; };
 		EDE92D832B95FEAC00C6A055 /* FindingFalconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92D822B95FEAC00C6A055 /* FindingFalconApp.swift */; };
 		EDE92D852B95FEAC00C6A055 /* FindFalconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92D842B95FEAC00C6A055 /* FindFalconView.swift */; };
 		EDE92D872B95FEAF00C6A055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE92D862B95FEAF00C6A055 /* Assets.xcassets */; };
@@ -69,6 +68,7 @@
 		EDE92DE02B97216000C6A055 /* SelectVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DDF2B97216000C6A055 /* SelectVehicleView.swift */; };
 		EDE92DE22B9757B400C6A055 /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DE12B9757B400C6A055 /* DestinationView.swift */; };
 		EDE92DE42B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DE32B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift */; };
+		EDFE181D2BA5A77C0085A0E8 /* DestinationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +145,7 @@
 		EDE92DDF2B97216000C6A055 /* SelectVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVehicleView.swift; sourceTree = "<group>"; };
 		EDE92DE12B9757B400C6A055 /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		EDE92DE32B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconPlanetsAndVehiclesWorker.swift; sourceTree = "<group>"; };
+		EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +160,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED7F96902BA59EFF008BB97C /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,14 +222,13 @@
 		ED5C88332BA3625F00D97AE3 /* FindFalcon */ = {
 			isa = PBXGroup;
 			children = (
-				ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */,
-				ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */,
 				ED5C88572BA4823500D97AE3 /* FindFalconInteractorTests.swift */,
-				ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */,
 				ED5C88592BA4824C00D97AE3 /* FindFalconPresenterTests.swift */,
-				ED5C885D2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift */,
 				ED5C885B2BA4826900D97AE3 /* FindFalconViewTests.swift */,
 				ED5C884C2BA451B400D97AE3 /* Mocks */,
+				EDFE18232BA5A8A80085A0E8 /* Models */,
+				EDFE181F2BA5A7AC0085A0E8 /* UIComponents */,
+				EDFE181E2BA5A78F0085A0E8 /* Workers */,
 			);
 			path = FindFalcon;
 			sourceTree = "<group>";
@@ -379,6 +378,32 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		EDFE181E2BA5A78F0085A0E8 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */,
+				ED5C885D2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		EDFE181F2BA5A7AC0085A0E8 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		EDFE18232BA5A8A80085A0E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */,
+				ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -414,7 +439,6 @@
 			);
 			name = FindingFalconTests;
 			packageProductDependencies = (
-				ED7F968F2BA59EFF008BB97C /* ViewInspector */,
 			);
 			productName = FindingFalconTests;
 			productReference = EDE92D8F2B95FEAF00C6A055 /* FindingFalconTests.xctest */;
@@ -449,7 +473,6 @@
 			);
 			mainGroup = EDE92D762B95FEAC00C6A055;
 			packageReferences = (
-				ED7F968E2BA59EFF008BB97C /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = EDE92D802B95FEAC00C6A055 /* Products */;
 			projectDirPath = "";
@@ -527,6 +550,7 @@
 				ED5C88502BA47D2200D97AE3 /* FindFalconInteractorMock.swift in Sources */,
 				ED5C88542BA47E3100D97AE3 /* FindFalconTokenWorkerMock.swift in Sources */,
 				ED5C88462BA44EF500D97AE3 /* FoundFalconViewTests.swift in Sources */,
+				EDFE181D2BA5A77C0085A0E8 /* DestinationViewTests.swift in Sources */,
 				ED5C88352BA42AA700D97AE3 /* FoundFalconPresenterMock.swift in Sources */,
 				ED5C88622BA4A58C00D97AE3 /* FindFalconDataModelTests.swift in Sources */,
 				ED5C884E2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift in Sources */,
@@ -813,25 +837,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		ED7F968E2BA59EFF008BB97C /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nalexn/ViewInspector";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.10;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ED7F968F2BA59EFF008BB97C /* ViewInspector */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ED7F968E2BA59EFF008BB97C /* XCRemoteSwiftPackageReference "ViewInspector" */;
-			productName = ViewInspector;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDE92D772B95FEAC00C6A055 /* Project object */;
 }
