@@ -123,7 +123,10 @@ final class FindFalconViewTests: XCTestCase {
         await view.getPlanetsAndVehicles()
         await view.retrieveToken()
         
-        await self.fulfillment(of: [expectation], timeout: 0.5)
+        // xcodebuild on CI is not working.
+        // await self.fulfillment(of: [expectation], timeout: 0.5)
+        
+        waitForExpectations(timeout: 0.5)
     }
     
     @MainActor func test_startAgain() async throws {
