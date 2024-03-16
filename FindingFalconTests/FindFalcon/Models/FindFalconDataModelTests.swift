@@ -82,5 +82,21 @@ final class FindFalconDataModelTests: XCTestCase {
         XCTAssertEqual(destination2.vehicleList[0], vehicle1)
         XCTAssertEqual(destination2.vehicleList[1].totalNo, 0)
         XCTAssertEqual(destination2.vehicleList[2], vehicle3)
+        
+        
+        destination2.selectedPlanet = planet1
+        destination2.selectedVehicle = vehicle1
+        XCTAssertFalse(dataModel.shouldButtonDisabled)
+        
+        dataModel.reset()
+        
+        XCTAssertEqual(destination1.planetList, [])
+        XCTAssertEqual(destination1.vehicleList, [])
+        XCTAssertNil(destination1.selectedVehicle)
+        XCTAssertNil(destination1.selectedPlanet)
+        XCTAssertEqual(destination2.planetList, [])
+        XCTAssertEqual(destination2.vehicleList, [])
+        XCTAssertNil(destination2.selectedVehicle)
+        XCTAssertNil(destination2.selectedPlanet)
     }
 }

@@ -68,6 +68,8 @@
 		EDE92DE02B97216000C6A055 /* SelectVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DDF2B97216000C6A055 /* SelectVehicleView.swift */; };
 		EDE92DE22B9757B400C6A055 /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DE12B9757B400C6A055 /* DestinationView.swift */; };
 		EDE92DE42B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE92DE32B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift */; };
+		EDFE181D2BA5A77C0085A0E8 /* DestinationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */; };
+		EDFE18252BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE18242BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		EDE92DDF2B97216000C6A055 /* SelectVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVehicleView.swift; sourceTree = "<group>"; };
 		EDE92DE12B9757B400C6A055 /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		EDE92DE32B9779AF00C6A055 /* FindFalconPlanetsAndVehiclesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconPlanetsAndVehiclesWorker.swift; sourceTree = "<group>"; };
+		EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewTests.swift; sourceTree = "<group>"; };
+		EDFE18242BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconInteractorErrorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,14 +224,13 @@
 		ED5C88332BA3625F00D97AE3 /* FindFalcon */ = {
 			isa = PBXGroup;
 			children = (
-				ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */,
-				ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */,
 				ED5C88572BA4823500D97AE3 /* FindFalconInteractorTests.swift */,
-				ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */,
 				ED5C88592BA4824C00D97AE3 /* FindFalconPresenterTests.swift */,
-				ED5C885D2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift */,
 				ED5C885B2BA4826900D97AE3 /* FindFalconViewTests.swift */,
 				ED5C884C2BA451B400D97AE3 /* Mocks */,
+				EDFE18232BA5A8A80085A0E8 /* Models */,
+				EDFE181F2BA5A7AC0085A0E8 /* UIComponents */,
+				EDFE181E2BA5A78F0085A0E8 /* Workers */,
 			);
 			path = FindFalcon;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				ED5C884D2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift */,
+				EDFE18242BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift */,
 				ED5C884F2BA47D2200D97AE3 /* FindFalconInteractorMock.swift */,
 				ED5C884A2BA4514D00D97AE3 /* FindFalconModelMocks.swift */,
 				ED5C88552BA47E4100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerMock.swift */,
@@ -377,6 +381,32 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		EDFE181E2BA5A78F0085A0E8 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C885F2BA4829100D97AE3 /* FindFalconPlanetsAndVehiclesWorkerTests.swift */,
+				ED5C885D2BA4828200D97AE3 /* FindFalconTokenWorkerTests.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		EDFE181F2BA5A7AC0085A0E8 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EDFE181C2BA5A77C0085A0E8 /* DestinationViewTests.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		EDFE18232BA5A8A80085A0E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C88612BA4A58C00D97AE3 /* FindFalconDataModelTests.swift */,
+				ED5C88632BA4B79800D97AE3 /* FindFalconDataStoreTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,6 +441,8 @@
 				EDE92D912B95FEAF00C6A055 /* PBXTargetDependency */,
 			);
 			name = FindingFalconTests;
+			packageProductDependencies = (
+			);
 			productName = FindingFalconTests;
 			productReference = EDE92D8F2B95FEAF00C6A055 /* FindingFalconTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -443,6 +475,8 @@
 				Base,
 			);
 			mainGroup = EDE92D762B95FEAC00C6A055;
+			packageReferences = (
+			);
 			productRefGroup = EDE92D802B95FEAC00C6A055 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -519,8 +553,10 @@
 				ED5C88502BA47D2200D97AE3 /* FindFalconInteractorMock.swift in Sources */,
 				ED5C88542BA47E3100D97AE3 /* FindFalconTokenWorkerMock.swift in Sources */,
 				ED5C88462BA44EF500D97AE3 /* FoundFalconViewTests.swift in Sources */,
+				EDFE181D2BA5A77C0085A0E8 /* DestinationViewTests.swift in Sources */,
 				ED5C88352BA42AA700D97AE3 /* FoundFalconPresenterMock.swift in Sources */,
 				ED5C88622BA4A58C00D97AE3 /* FindFalconDataModelTests.swift in Sources */,
+				EDFE18252BA5C3140085A0E8 /* FindFalconInteractorErrorMock.swift in Sources */,
 				ED5C884E2BA47D0F00D97AE3 /* FindFalconDisplayMock.swift in Sources */,
 				ED5C88642BA4B79800D97AE3 /* FindFalconDataStoreTests.swift in Sources */,
 				ED5C88312BA3520A00D97AE3 /* ResponseHandlerTests.swift in Sources */,
