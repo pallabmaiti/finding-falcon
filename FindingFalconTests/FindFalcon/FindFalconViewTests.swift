@@ -123,7 +123,7 @@ final class FindFalconViewTests: XCTestCase {
         await view.getPlanetsAndVehicles()
         await view.retrieveToken()
         
-        await fulfillment(of: [expectation])
+        await fulfillment(of: [expectation], timeout: 0.5)
     }
     
     @MainActor func test_startAgain() async throws {
