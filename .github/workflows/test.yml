@@ -39,7 +39,7 @@ jobs:
         run: |
           bash Scripts/xccov-to-generic.sh build/Logs/Test/*.xcresult/ > generic-coverage.xml
           
-#      - name: SonarCloud Scan
+      - name: SonarCloud Scan
 #        env:
 #          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 #        run: |
